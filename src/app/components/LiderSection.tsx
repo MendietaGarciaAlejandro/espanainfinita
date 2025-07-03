@@ -13,7 +13,8 @@ export default function LiderSection() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true, amount: 0.2 }}
-          className="md:w-1/3 flex justify-center"
+          whileHover={{ scale: 1.03, boxShadow: "0 8px 32px 0 rgba(220,38,38,0.15)" }}
+          className="md:w-1/3 flex justify-center cursor-pointer hover:shadow-2xl transition-all duration-200"
         >
           <div className="w-48 h-48 rounded-full bg-gradient-to-br from-red-700 to-yellow-400 flex items-center justify-center shadow-lg overflow-hidden border-4 border-white">
             <Image

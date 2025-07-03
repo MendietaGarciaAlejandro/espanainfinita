@@ -16,7 +16,14 @@ export default function ContactoSection() {
         >
           Contacta con Nosotros
         </motion.h2>
-        <form className="bg-white/90 rounded-xl shadow-lg p-6 sm:p-8 border-t-4 border-yellow-400 mx-auto w-full max-w-md">
+        <motion.form
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="bg-white/90 rounded-xl shadow-lg p-6 sm:p-8 border-t-4 border-yellow-400 mx-auto w-full max-w-xl"
+          aria-label="Formulario de contacto"
+        >
           <div className="mb-4">
             <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
             <div className="relative">
@@ -28,8 +35,12 @@ export default function ContactoSection() {
               <input
                 id="nombre"
                 type="text"
+                name="nombre"
+                required
                 placeholder="Tu nombre"
-                className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:border-red-700 focus:ring-2 focus:ring-red-200 focus:outline-none transition-all duration-200"
+                className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:border-red-700 focus:ring-2 focus:ring-red-200 focus:outline-none transition-all duration-200 focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2"
+                aria-required="true"
+                aria-label="Nombre"
               />
             </div>
           </div>
@@ -45,8 +56,12 @@ export default function ContactoSection() {
               <input
                 id="email"
                 type="email"
+                name="email"
+                required
                 placeholder="tu@email.com"
-                className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:border-red-700 focus:ring-2 focus:ring-red-200 focus:outline-none transition-all duration-200"
+                className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:border-red-700 focus:ring-2 focus:ring-red-200 focus:outline-none transition-all duration-200 focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2"
+                aria-required="true"
+                aria-label="Email"
               />
             </div>
           </div>
@@ -60,19 +75,26 @@ export default function ContactoSection() {
               </div>
               <textarea
                 id="mensaje"
+                name="mensaje"
+                required
                 placeholder="Tu mensaje"
-                className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:border-red-700 focus:ring-2 focus:ring-red-200 focus:outline-none transition-all duration-200"
+                className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:border-red-700 focus:ring-2 focus:ring-red-200 focus:outline-none transition-all duration-200 focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2"
                 rows={4}
+                aria-required="true"
+                aria-label="Mensaje"
               ></textarea>
             </div>
           </div>
-          <button
+          <motion.button
             type="submit"
-            className="w-full bg-red-700 text-white font-bold py-3 px-4 rounded-lg hover:bg-yellow-400 hover:text-red-900 transition-all duration-300 border-2 border-yellow-400 shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98]"
+            whileHover={{ scale: 1.05, boxShadow: "0 8px 32px 0 rgba(234,179,8,0.18)" }}
+            whileTap={{ scale: 0.96 }}
+            className="w-full mt-4 py-3 px-6 rounded-full bg-yellow-400 text-red-800 font-bold text-lg shadow hover:shadow-2xl transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2"
+            aria-label="Enviar mensaje"
           >
-            Enviar mensaje
-          </button>
-        </form>
+            Enviar
+          </motion.button>
+        </motion.form>
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,6 +13,18 @@ export const Header = () => {
     { href: "#contacto", label: "Contacto" },
   ];
 
+  // Evitar scroll del body cuando el menú móvil está abierto
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -21,7 +33,7 @@ export const Header = () => {
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="#inicio" className="text-2xl font-bold text-gray-800 dark:text-white">
+          <Link href="#inicio" className="text-2xl font-bold text-gray-800 dark:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2">
             España Infinita
           </Link>
 
@@ -31,7 +43,8 @@ export const Header = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+                className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2"
+                tabIndex={0}
               >
                 {item.label}
               </Link>
@@ -40,9 +53,11 @@ export const Header = () => {
 
           {/* Botón menú móvil */}
           <button
-            className="md:hidden text-gray-600 dark:text-gray-300"
+            className="md:hidden text-gray-600 dark:text-gray-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Abrir menú"
+            aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-controls="mobile-menu"
+            aria-expanded={isMenuOpen}
           >
             <svg
               className="w-6 h-6"
@@ -62,19 +77,32 @@ export const Header = () => {
           </button>
         </div>
 
+        {/* Fondo semitransparente para menú móvil */}
+        {isMenuOpen && (
+          <div
+            className="fixed inset-0 bg-black/50 z-40 md:hidden animate-fade-in"
+            aria-hidden="true"
+            onClick={() => setIsMenuOpen(false)}
+          />
+        )}
         {/* Menú móvil */}
         {isMenuOpen && (
           <motion.div
+            id="mobile-menu"
+            role="menu"
+            aria-label="Menú de navegación móvil"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden mt-4 space-y-4"
+            className="fixed top-20 left-0 right-0 z-50 md:hidden mt-0 space-y-4 bg-white/95 backdrop-blur-sm p-6 rounded-b-2xl shadow-lg"
           >
             {menuItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="block text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+                className="block text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2"
+                tabIndex={0}
+                role="menuitem"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
@@ -83,6 +111,18 @@ export const Header = () => {
           </motion.div>
         )}
       </nav>
+
+      {/* Botón flotante de volver arriba */}
+      <a
+        href="#inicio"
+        className="fixed bottom-6 right-6 z-50 bg-yellow-400 text-red-800 rounded-full shadow-lg p-3 flex items-center justify-center hover:bg-yellow-300 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2 animate-fade-in"
+        aria-label="Volver arriba"
+        style={{ boxShadow: "0 4px 24px 0 rgba(220,38,38,0.18)" }}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+        </svg>
+      </a>
     </motion.header>
   );
 } 
