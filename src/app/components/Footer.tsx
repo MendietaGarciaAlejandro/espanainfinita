@@ -1,16 +1,7 @@
 export default function Footer() {
   return (
     <footer 
-      style={{
-        padding: '2rem 1rem',
-        textAlign: 'center',
-        color: '#f3f4f6',
-        fontSize: '0.875rem',
-        background: 'linear-gradient(to right, #b91c1c, #facc15, #dc2626)',
-        borderTop: '4px solid #facc15',
-        marginTop: '2.5rem',
-        boxShadow: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)'
-      }}
+      className="py-8 px-4 text-center text-gray-100 text-sm bg-gradient-to-r from-red-700 via-yellow-300 to-red-600 border-t-4 border-yellow-300 mt-10 shadow-inner"
     >
       © {new Date().getFullYear()} España Infinita. Todos los derechos reservados.
     </footer>

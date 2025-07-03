@@ -3,12 +3,8 @@ import { motion } from 'framer-motion';
 export default function ValoresSection() {
   return (
     <section 
-      id="valores" 
-      style={{
-        padding: '5rem 1rem',
-        background: 'linear-gradient(to right, #facc15, #ffffff, #dc2626)',
-        borderBottom: '4px solid #b91c1c'
-      }}
+      id="valores"
+      className="py-20 px-4 bg-gradient-to-r from-yellow-300 via-white to-red-600 border-b-4 border-red-700"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <motion.h2

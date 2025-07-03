@@ -3,11 +3,8 @@ import { motion } from 'framer-motion';
 export default function ContactoSection() {
   return (
     <section 
-      id="contacto" 
-      style={{
-        padding: '5rem 1rem',
-        background: 'linear-gradient(to right, #dc2626, #facc15, #ffffff)'
-      }}
+      id="contacto"
+      className="py-20 px-4 bg-gradient-to-r from-red-600 via-yellow-300 to-white"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-xl w-full">
         <motion.h2

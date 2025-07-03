@@ -4,12 +4,8 @@ import Image from 'next/image';
 export default function LiderSection() {
   return (
     <section 
-      id="lider" 
-      style={{
-        padding: '5rem 1rem',
-        background: 'linear-gradient(to left, #b91c1c, #facc15, #ffffff)',
-        borderBottom: '4px solid #facc15'
-      }}
+      id="lider"
+      className="py-20 px-4 bg-gradient-to-l from-red-700 via-yellow-300 to-white border-b-4 border-yellow-300"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-col md:flex-row items-center gap-8 md:gap-12">
         <motion.div

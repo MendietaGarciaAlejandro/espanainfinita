@@ -1,7 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
 import HeroSection from './components/HeroSection';
 import ValoresSection from './components/ValoresSection';
 import LiderSection from './components/LiderSection';

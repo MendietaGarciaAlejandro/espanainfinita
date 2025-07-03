@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import NavMenu from "./components/NavMenu";
+import { Header } from "./components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +20,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={inter.className + " text-gray-900"}>
+        <Header />
         <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur border-b border-gray-200 z-50 shadow-sm">
           <NavMenu />
         </header>
-        <main className="pt-20 min-h-screen">{children}</main>
+        <main className="pt-24 min-h-screen">{children}</main>
       </body>
     </html>
   );

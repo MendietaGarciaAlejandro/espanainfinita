@@ -2,20 +2,9 @@ import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   return (
-    <section 
-      style={{ 
-        background: 'linear-gradient(to bottom right, #b91c1c, #facc15, #dc2626)',
-        position: 'relative',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        minHeight: '70vh',
-        textAlign: 'center',
-        overflow: 'hidden',
-        borderBottom: '8px solid #facc15',
-        padding: '0 1rem'
-      }}
+    <section
+      id="inicio"
+      className="flex flex-col items-center justify-center min-h-[70vh] text-center overflow-hidden border-b-8 border-yellow-300 px-4 bg-gradient-to-br from-red-700 via-yellow-300 to-red-600 relative"
     >
       <motion.h1
         initial={{ opacity: 0, y: 40 }}

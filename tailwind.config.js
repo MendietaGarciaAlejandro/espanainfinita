@@ -20,6 +20,12 @@ module.exports = {
           '100%': { opacity: '1' },
         },
       },
+      rotate: {
+        '12': '12deg',
+        '-12': '-12deg',
+        '6': '6deg',
+        '-6': '-6deg',
+      }
     },
   },
   plugins: [],

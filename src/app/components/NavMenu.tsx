@@ -56,9 +56,12 @@ export default function NavMenu() {
           aria-label="Menú"
         >
           <div className="w-6 h-6 relative flex justify-center items-center">
-            <span className={`absolute block w-6 h-0.5 bg-red-700 transition-all duration-300 ${menuOpen ? 'rotate-45' : '-translate-y-1.5'}`}></span>
-            <span className={`absolute block w-6 h-0.5 bg-red-700 transition-all duration-300 ${menuOpen ? 'opacity-0 scale-x-0' : 'opacity-100'}`}></span>
-            <span className={`absolute block w-6 h-0.5 bg-red-700 transition-all duration-300 ${menuOpen ? '-rotate-45' : 'translate-y-1.5'}`}></span>
+            {/* Línea superior */}
+            <span className={`absolute block w-6 h-0.5 bg-red-700 transition-all duration-300 ${menuOpen ? 'rotate-45' : '-rotate-6 -translate-y-2'}`}></span>
+            {/* Línea central */}
+            <span className={`absolute block w-6 h-0.5 bg-red-700 transition-all duration-300 ${menuOpen ? 'opacity-0 scale-x-0' : 'opacity-100 rotate-6'}`}></span>
+            {/* Línea inferior */}
+            <span className={`absolute block w-6 h-0.5 bg-red-700 transition-all duration-300 ${menuOpen ? '-rotate-45' : 'rotate-6 translate-y-2'}`}></span>
           </div>
         </button>
       </nav>
