@@ -19,10 +19,10 @@ export default function LiderSection() {
           <div className="w-48 h-48 rounded-full bg-gradient-to-br from-red-700 to-yellow-400 flex items-center justify-center shadow-lg overflow-hidden border-4 border-white">
             <Image
               src="/francisco.jpg"
-              alt="Francisco - Líder"
-              width={176}
-              height={176}
-              className="w-44 h-44 object-cover rounded-full"
+              alt="Francisco, líder de España Infinita"
+              width={192}
+              height={192}
+              className="rounded-full object-cover w-full h-full"
               priority
             />
           </div>

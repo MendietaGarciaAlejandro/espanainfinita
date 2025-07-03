@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const testimonios = [
   {
@@ -41,7 +42,7 @@ export default function TestimoniosSection() {
               viewport={{ once: true, amount: 0.2 }}
               className="bg-white/95 rounded-xl shadow-2xl p-6 flex flex-col items-center text-center border-2 border-yellow-300 hover:shadow-yellow-400 transition-all duration-200 cursor-pointer"
             >
-              <img src={t.avatar} alt={t.nombre} className="w-16 h-16 rounded-full mb-4 border-4 border-yellow-300 bg-white object-cover" />
+              <Image src={t.avatar} alt={t.nombre} width={64} height={64} className="w-16 h-16 rounded-full mb-4 border-4 border-yellow-300 bg-white object-cover" />
               <p className="text-red-700 italic mb-4">“{t.texto}”</p>
               <span className="font-bold text-yellow-600">{t.nombre}</span>
             </motion.div>

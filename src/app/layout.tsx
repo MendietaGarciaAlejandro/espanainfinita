@@ -8,8 +8,27 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "España Infinita - Un Proyecto Político Transformador",
-  description:
-    "España Infinita es un proyecto político transformador que busca devolver la cordura a España a través de propuestas innovadoras y valores fundamentales.",
+  description: "Descubre la riqueza, diversidad y pasión de nuestro país. Un viaje por la cultura, la historia y los valores que nos hacen únicos.",
+  openGraph: {
+    title: "España Infinita",
+    description: "Descubre la riqueza, diversidad y pasión de nuestro país. Un viaje por la cultura, la historia y los valores que nos hacen únicos.",
+    url: "https://espanainfinita.com",
+    images: [
+      {
+        url: "/francisco.jpg",
+        width: 1200,
+        height: 630,
+        alt: "España Infinita logo"
+      }
+    ],
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "España Infinita",
+    description: "Descubre la riqueza, diversidad y pasión de nuestro país.",
+    images: ["/francisco.jpg"]
+  }
 };
 
 export default function RootLayout({
