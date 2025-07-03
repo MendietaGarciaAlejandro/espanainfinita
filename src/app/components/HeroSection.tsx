@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section
       id="inicio"
-      className="flex flex-col items-center justify-center min-h-[70vh] text-center overflow-hidden border-b-8 border-yellow-300 px-4 bg-gradient-to-br from-red-700 via-yellow-300 to-red-600 relative"
+      className="flex flex-col items-center justify-center min-h-[70vh] text-center overflow-hidden border-b-8 border-yellow-300 px-4 bg-gradient-to-br from-red-700 via-yellow-300 to-red-600 relative parallax-hero"
     >
       <motion.h1
         initial={{ opacity: 0, y: 40 }}

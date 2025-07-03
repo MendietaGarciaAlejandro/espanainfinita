@@ -22,3 +22,10 @@ body {
 .animate-fade-in {
   animation: fadeIn 1s ease-in;
 }
+
+.parallax-hero {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
