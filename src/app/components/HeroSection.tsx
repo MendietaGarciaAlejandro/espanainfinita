@@ -32,6 +32,13 @@ export default function HeroSection() {
       >
         Conócenos
       </motion.a>
+      {/* SVG decorativo de ondas */}
+      <div className="absolute left-0 right-0 bottom-0 w-full overflow-hidden pointer-events-none" style={{height: '60px'}}>
+        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          <path fill="#facc15" fillOpacity="0.5" d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" />
+          <path fill="#dc2626" fillOpacity="0.3" d="M0,40 C480,10 960,50 1440,40 L1440,60 L0,60 Z" />
+        </svg>
+      </div>
     </section>
   );
 } 

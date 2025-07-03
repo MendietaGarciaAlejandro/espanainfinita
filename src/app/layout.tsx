@@ -19,11 +19,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className="scroll-smooth">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="España Infinita - Descubre la riqueza, diversidad y pasión de nuestro país. Un viaje por la cultura, la historia y los valores que nos hacen únicos." />
+        <meta property="og:title" content="España Infinita" />
+        <meta property="og:description" content="Descubre la riqueza, diversidad y pasión de nuestro país. Un viaje por la cultura, la historia y los valores que nos hacen únicos." />
+        <meta property="og:image" content="/francisco.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://espanainfinita.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="España Infinita" />
+        <meta name="twitter:description" content="Descubre la riqueza, diversidad y pasión de nuestro país." />
+        <meta name="twitter:image" content="/francisco.jpg" />
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body className={inter.className + " text-gray-900"}>
         <Header />
-        <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur border-b border-gray-200 z-50 shadow-sm">
-          <NavMenu />
-        </header>
         <main className="pt-24 min-h-screen">{children}</main>
       </body>
     </html>

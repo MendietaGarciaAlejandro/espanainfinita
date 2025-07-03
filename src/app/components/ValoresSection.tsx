@@ -4,7 +4,7 @@ export default function ValoresSection() {
   return (
     <section 
       id="valores"
-      className="py-20 px-4 bg-gradient-to-r from-yellow-300 via-white to-red-600 border-b-4 border-red-700"
+      className="py-20 px-4 bg-gradient-to-r from-yellow-300 via-white to-red-600 border-b-4 border-red-700 shadow-inner"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <motion.h2
@@ -42,7 +42,7 @@ export default function ValoresSection() {
               transition={{ duration: 0.6, delay: i * 0.15 }}
               viewport={{ once: true, amount: 0.2 }}
               whileHover={{ scale: 1.04, boxShadow: "0 8px 32px 0 rgba(220,38,38,0.12)" }}
-              className="bg-white/90 rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition-all duration-200 cursor-pointer"
+              className="bg-white/90 rounded-xl shadow-2xl p-6 flex flex-col items-center text-center hover:shadow-2xl transition-all duration-200 cursor-pointer border border-yellow-200"
             >
               <span className="text-4xl mb-3">{valor.icon}</span>
               <h3 className="text-xl font-bold mb-2 text-red-700">{valor.title}</h3>

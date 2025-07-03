@@ -4,7 +4,7 @@ export default function ContactoSection() {
   return (
     <section 
       id="contacto"
-      className="py-20 px-4 bg-gradient-to-r from-red-600 via-yellow-300 to-white"
+      className="py-20 px-4 bg-gradient-to-r from-red-600 via-yellow-300 to-white shadow-inner"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-xl w-full">
         <motion.h2
@@ -21,7 +21,7 @@ export default function ContactoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
           viewport={{ once: true, amount: 0.2 }}
-          className="bg-white/90 rounded-xl shadow-lg p-6 sm:p-8 border-t-4 border-yellow-400 mx-auto w-full max-w-xl"
+          className="bg-white/90 rounded-xl shadow-2xl p-6 sm:p-8 border-t-4 border-yellow-400 mx-auto w-full max-w-xl border border-yellow-200"
           aria-label="Formulario de contacto"
         >
           <div className="mb-4">

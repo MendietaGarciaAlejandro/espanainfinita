@@ -5,7 +5,7 @@ export default function LiderSection() {
   return (
     <section 
       id="lider"
-      className="py-20 px-4 bg-gradient-to-l from-red-700 via-yellow-300 to-white border-b-4 border-yellow-300"
+      className="py-20 px-4 bg-gradient-to-l from-red-700 via-yellow-300 to-white border-b-4 border-yellow-300 shadow-inner"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-col md:flex-row items-center gap-8 md:gap-12">
         <motion.div
@@ -14,7 +14,7 @@ export default function LiderSection() {
           transition={{ duration: 0.7 }}
           viewport={{ once: true, amount: 0.2 }}
           whileHover={{ scale: 1.03, boxShadow: "0 8px 32px 0 rgba(220,38,38,0.15)" }}
-          className="md:w-1/3 flex justify-center cursor-pointer hover:shadow-2xl transition-all duration-200"
+          className="md:w-1/3 flex justify-center cursor-pointer shadow-2xl hover:shadow-2xl transition-all duration-200 border border-yellow-200 bg-white/90"
         >
           <div className="w-48 h-48 rounded-full bg-gradient-to-br from-red-700 to-yellow-400 flex items-center justify-center shadow-lg overflow-hidden border-4 border-white">
             <Image

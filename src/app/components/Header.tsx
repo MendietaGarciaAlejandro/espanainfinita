@@ -29,11 +29,11 @@ export const Header = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm dark:bg-gray-900/80 shadow"
+      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-red-700 via-yellow-300 to-red-600 text-white shadow"
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="#inicio" className="text-2xl font-bold text-gray-800 dark:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2">
+          <Link href="#inicio" className="text-2xl font-bold text-white drop-shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2">
             España Infinita
           </Link>
 
@@ -43,7 +43,7 @@ export const Header = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2"
+                className="text-white/90 hover:text-yellow-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2 px-2 py-1 rounded"
                 tabIndex={0}
               >
                 {item.label}
@@ -53,7 +53,7 @@ export const Header = () => {
 
           {/* Botón menú móvil */}
           <button
-            className="md:hidden text-gray-600 dark:text-gray-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2"
+            className="md:hidden text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-controls="mobile-menu"
@@ -94,13 +94,13 @@ export const Header = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed top-20 left-0 right-0 z-50 md:hidden mt-0 space-y-4 bg-white/95 backdrop-blur-sm p-6 rounded-b-2xl shadow-lg"
+            className="fixed top-20 left-0 right-0 z-50 md:hidden mt-0 space-y-4 bg-gradient-to-r from-red-700 via-yellow-300 to-red-600 text-white p-6 rounded-b-2xl shadow-lg"
           >
             {menuItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="block text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2"
+                className="block text-white/90 hover:text-yellow-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2 px-2 py-2 rounded"
                 tabIndex={0}
                 role="menuitem"
                 onClick={() => setIsMenuOpen(false)}
@@ -115,7 +115,7 @@ export const Header = () => {
       {/* Botón flotante de volver arriba */}
       <a
         href="#inicio"
-        className="fixed bottom-6 right-6 z-50 bg-yellow-400 text-red-800 rounded-full shadow-lg p-3 flex items-center justify-center hover:bg-yellow-300 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2 animate-fade-in"
+        className="fixed bottom-2 right-6 z-40 bg-yellow-400 text-red-800 rounded-full shadow-lg p-3 flex items-center justify-center hover:bg-yellow-300 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2 animate-fade-in"
         aria-label="Volver arriba"
         style={{ boxShadow: "0 4px 24px 0 rgba(220,38,38,0.18)" }}
       >
