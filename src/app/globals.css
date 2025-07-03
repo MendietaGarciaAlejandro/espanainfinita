@@ -1,9 +1,7 @@
 /* src/app/globals.css */
 
-/* importa el reset (preflight) */
-@import "tailwindcss/preflight";
-
-/* y luego solo las utilidades */
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
 
 
@@ -15,11 +13,8 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-    to bottom,
-    rgb(var(--background-start-rgb)),
-    rgb(var(--background-end-rgb))
-  );
+  /* Eliminamos el fondo predeterminado para que no interfiera con los gradientes de las secciones */
+  background: #ffffff;
 }
 
 @keyframes fadeIn {
