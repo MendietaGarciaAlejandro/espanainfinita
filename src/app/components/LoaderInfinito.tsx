@@ -1,19 +1,31 @@
 'use client';
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 export default function LoaderInfinito() {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
+  const [fade, setFade] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setVisible(false), 1800);
-    return () => clearTimeout(timer);
+    setMounted(true);
+    setVisible(true);
+    const timer = setTimeout(() => setFade(true), 1400); // Empieza fade out
+    const timer2 = setTimeout(() => setVisible(false), 1800); // Desmonta
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(timer2);
+    };
   }, []);
 
-  if (!visible) return null;
+  if (!visible || !mounted) return null;
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-black transition-colors duration-500">
+  return createPortal(
+    <div
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-black transition-colors duration-500 ${fade ? 'opacity-0 pointer-events-none' : 'opacity-100'} animate-fade-in`}
+      style={{ pointerEvents: fade ? 'none' : 'auto' }}
+    >
       <svg
         width="120"
         height="60"
@@ -40,6 +52,7 @@ export default function LoaderInfinito() {
           animation: spin-infinito 1.4s cubic-bezier(0.77,0,0.18,1) infinite;
         }
       `}</style>
-    </div>
+    </div>,
+    document.body
   );
 } 

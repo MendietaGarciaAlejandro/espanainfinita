@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "./components/Header";
+import LoaderInfinito from "./components/LoaderInfinito";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -53,6 +54,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={inter.className + " text-gray-900"}>
+        <LoaderInfinito />
         <Header />
         <main className="pt-24 min-h-screen">{children}</main>
       </body>
