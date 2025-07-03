@@ -1,6 +1,11 @@
 /* src/app/globals.css */
 
+/* importa el reset (preflight) */
+@import "tailwindcss/preflight";
+
+/* y luego solo las utilidades */
 @tailwind utilities;
+
 
 :root {
   --foreground-rgb: 0, 0, 0;
